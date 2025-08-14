@@ -32,6 +32,8 @@ src/
 
 ## Installation
 
+### Option 1: Local Development
+
 1. Install dependencies:
 ```bash
 npm install
@@ -44,12 +46,60 @@ npm start
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Option 2: Docker Development
+
+1. Start development container with hot reloading:
+```bash
+npm run docker:dev
+```
+
+2. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Option 3: Docker Production
+
+1. Build and run production container:
+```bash
+npm run docker:prod
+```
+
+2. Open [http://localhost:80](http://localhost:80) in your browser.
+
+### Docker Commands
+
+```bash
+# Development mode
+npm run docker:dev
+
+# Production mode
+npm run docker:prod
+
+# Stop containers
+npm run docker:stop
+
+# Clean up containers and volumes
+npm run docker:clean
+
+# Build production image manually
+docker build -t portfolio-analyzer:latest .
+
+# Run production container manually
+docker run -p 8080:80 portfolio-analyzer:latest
+```
+
 ## Dependencies
 
 - **React 18**: Modern React with hooks
 - **Recharts**: Chart library for data visualization
 - **Lucide React**: Icon library
 - **Tailwind CSS**: Utility-first CSS framework
+
+## Docker Benefits
+
+- **Consistent Environment**: Same behavior across development, staging, and production
+- **Easy Deployment**: One command to deploy anywhere Docker runs
+- **Isolation**: No conflicts with local system dependencies
+- **Scalability**: Easy to scale horizontally with multiple containers
+- **Portability**: Run on any platform that supports Docker
 
 ## Key Components
 
